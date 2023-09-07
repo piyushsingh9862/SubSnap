@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RedditImageScrapper(Search)</string>
+    <string name="share">Share</string>
+    <string name="next">Next</string>
+    <string name="smi">ShowMemeImage</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="safe">Safe</string>
+    <string name="unsafe">Unsafe</string>
+    <string name="prev">Prev</string>
+    <string name="down">Down</string>
+    <string name="download">Download</string>
+    <string name="enter_search">Enter Search</string>
+    <string name="search">Search</string>
+    <string name="enter_subreddit">Enter Subreddit</string>
+    <string name="abt">\n\n\nAbout:\n\n\n\n(API:https://github.com/D3vd/Meme_Api)\n\nand some help from\n(https://stackoverflow.com/)</string>
+</resources>

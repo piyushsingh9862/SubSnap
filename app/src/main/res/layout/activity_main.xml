@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/darkgray">
+
+    <ToggleButton
+        android:id="@+id/aboutToggle"
+        android:layout_width="38sp"
+        android:layout_height="38sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineH2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guidelineV5"
+        android:background="@drawable/about"
+        android:textSize="20sp"
+        android:padding="7sp"
+        android:textColor="@color/trans"
+        />
+
+    <TextView
+        android:id="@+id/aboutText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        android:text="@string/abt"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        />
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV5"
+        app:layout_constraintRight_toLeftOf="@id/guidelineV3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV5"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV3"
+        android:visibility="gone"
+        android:hint="@string/enter_subreddit"
+        android:text=""
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/spinnerSelect"
+        android:layout_width="270sp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:dropDownWidth="270sp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:popupBackground="@color/lightgray"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV5"
+        app:layout_constraintRight_toLeftOf="@id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/addToggleButton"
+        android:layout_width="38sp"
+        android:layout_height="38sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/guidelineV4"
+        android:background="@drawable/add"
+        android:text=""
+        android:textOn=""
+        android:textOff=""
+        android:contentDescription="@string/enter_search" />
+
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="38sp"
+        android:layout_height="38sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV4"
+        app:layout_constraintLeft_toRightOf="@+id/guidelineV3"
+        android:background="@drawable/search"
+        android:visibility="gone"
+        android:onClick="searchedButtonClicked"
+        android:contentDescription="@string/search" />
+
+    <com.app.redditimagescrappersearch.ZoomClass
+        android:id="@+id/memeImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:contentDescription="@string/smi"
+        app:layout_constraintBottom_toTopOf="@id/shareButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineH2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@tools:sample/avatars"
+        android:backgroundTint="@color/darkgray"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/memeImageView"
+        app:layout_constraintLeft_toLeftOf="@id/memeImageView"
+        app:layout_constraintRight_toRightOf="@id/memeImageView"
+        app:layout_constraintTop_toTopOf="@id/memeImageView" />
+
+    <ImageButton
+        android:id="@+id/shareButton"
+        android:layout_width="80sp"
+        android:layout_height="63sp"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/share"
+        android:contentDescription="@string/share"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="shareButtonClicked"
+        android:padding="7dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintLeft_toRightOf="@id/guidelineV1"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH1" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="80sp"
+        android:layout_height="63sp"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/next"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="nextButtonClicked"
+        android:padding="7sp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColorHighlight="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/guidelineV3"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/next" />
+
+
+    <ImageButton
+        android:id="@+id/downloadButton"
+        android:layout_width="80sp"
+        android:layout_height="63sp"
+        android:layout_marginTop="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineH1"
+        android:background="@drawable/download"
+        android:onClick="downloadButtonClicked"
+        android:contentDescription="@string/download" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
