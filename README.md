@@ -12,10 +12,30 @@ SubSnap is a versatile Android application designed for exploring and displaying
 ## Getting Started
 To use SubSnap, follow these steps:
 
-1. Download the APK file from the 'tags' section of this repository under 'Assets.' Look for the file named 'Reddit.Image.Scrapper.1.0.apk' (7.26 MB) and download it.
-
-2. Install the App:
-    - If you encounter a 'Blocked By Play Protect' warning, proceed with the installation by selecting "Install Anyway."
-    - If prompted to scan the app, choose "Don't Send."
+1.  **Clone the Repository:** Start by cloning the SubSnap repository to your local machine using Git:
     
-Please note that to enable the download feature, you must grant the app the necessary Storage Permission. You can do this by going to App Settings > Permissions > Storage > Allow.
+    bashCopy code
+    
+    `git clone https://github.com/YourGitHubUsername/SubSnap.git` 
+    
+2.  **Navigate to the Project Directory:** Change your working directory to the project's root folder:
+    
+    bashCopy code
+    
+    `cd SubSnap` 
+    
+3.  **Build the APK:** Use Gradle to build the APK. Execute the following command:
+    
+    bashCopy code
+    
+    `./gradlew assembleDebug` 
+    
+    This command will build the debug version of the APK.
+    
+4.  **Locate the APK:** Once the build process is complete, you can find the generated APK file in the following directory:
+    
+    luaCopy code
+    
+    `app/build/outputs/apk/debug/app-debug.apk` 
+    
+5.  **Install the APK:** Transfer the APK to your Android device and install it. You may need to enable "Install from Unknown Sources" in your device's settings if you haven't already.
